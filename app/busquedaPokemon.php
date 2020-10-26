@@ -2,12 +2,15 @@
 session_start();
 require_once("repositories/SearchPokemonDatabaseRepository.php");
 require_once("views/grid_pokemon.php");
+require_once("views/removePokemonModal.php");
+require_once("views/editPokemonModal.php");
 ?>
 <!DOCTYPE html>
 <html>
 <title>Pokedex</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3.css">
+<script src="javascript/javascript.js"></script>
 <meta charset="UTF-8">
 <body class="w3-dark-gray w3-mobile">
 
@@ -34,10 +37,12 @@ require_once("views/grid_pokemon.php");
 <section class="w3-row l12 w3-container">
     <?php
     grilla($_SESSION["grid"], $_SESSION["rol"]);
-
-    unset($_SESSION["grid"]);
-
     ?>
 </section>
+<?php
+viewRemovePokemonModal();
+viewEditPokemonModal();
+?>
+</div>
 </body>
 </html>

@@ -10,7 +10,7 @@ if($email !=null){
     if($loggeado!=null){
         $_SESSION["rol"] = $loggeado[0]["rol_id"];
         $_SESSION["user"] = $loggeado[0]["nombre"] . " " . $loggeado[0]["apellido"];
-        header("Location: ../busquedaPokemon.php");
+        header("Location: ../entrypoints/SearchPokemonController.php");
     }else{
         header("Location: ../useCases/ErrorUseCase.php");
     }

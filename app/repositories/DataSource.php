@@ -6,7 +6,7 @@ class DataSource
 
     public function __construct()
     {
-        $this->conexion = mysqli_connect("172.17.0.4", "root", "123456", "pokedexCervera") or die("no se puede conectar");
+        $this->conexion = mysqli_connect("172.17.0.3", "root", "123456", "pokedexCervera") or die("no se puede conectar");
     }
 
     public function get($sql)
@@ -26,6 +26,17 @@ class DataSource
     public function save($sql)
     {
         mysqli_query( $this->conexion, $sql);
+        return true;
+    }
+    public function update($sql)
+    {
+        mysqli_query( $this->conexion, $sql);
+        return true;
+    }
+    public function remove($sql)
+    {
+        mysqli_query( $this->conexion, $sql);
+        return true;
     }
 }
 
